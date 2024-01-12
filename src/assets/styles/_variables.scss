@@ -1,0 +1,99 @@
+@mixin buttonFilled($bg, $padding-x, $padding-y, $font-size, $font-color) {
+	background: $bg;
+	font-size: 16px;
+	border: none;
+	outline: none;
+	font-size: $font-size;
+	border-radius: 50px;
+	cursor: pointer;
+	background-color: $bg;
+	padding: $padding-y $padding-x;
+	color: $font-color;
+	&:hover {
+		background: $font-color;
+		color: $bg;
+		transition: all 0.3s ease-in-out;
+	}
+}
+@mixin buttonOutlined(
+	$bg,
+	$padding-x,
+	$padding-y,
+	$font-size,
+	$font-color,
+	$border-color,
+	$hover-font-color
+) {
+	background: $bg;
+	font-size: 16px;
+	border: 1px solid $border-color;
+	outline: none;
+	font-size: $font-size;
+	border-radius: 50px;
+	cursor: pointer;
+	background-color: $bg;
+	padding: $padding-y $padding-x;
+	color: $font-color;
+	&:hover {
+		background: $font-color;
+		color: $hover-font-color;
+		transition: all 0.3s ease-in-out;
+	}
+}
+
+@mixin input($bg, $padding-x, $padding-y, $font-size, $font-color) {
+	background-color: $bg;
+	padding: $padding-y $padding-x;
+	font-size: $font-size;
+	color: $font-color;
+	border: none;
+	outline: none;
+	border-radius: 30px;
+}
+
+@mixin for-small-screen {
+	@media (min-width: 640px) {
+		@content;
+	}
+}
+@mixin for-medium-screen {
+	@media (min-width: 768px) {
+		@content;
+	}
+}
+@mixin for-large-screen {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+@mixin for-extralarge-screen {
+	@media (min-width: 1280px) {
+		@content;
+	}
+}
+
+@mixin keyframes($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+		@content;
+	}
+	@-moz-keyframes #{$animation-name} {
+		@content;
+	}
+	@-ms-keyframes #{$animation-name} {
+		@content;
+	}
+	@-o-keyframes #{$animation-name} {
+		@content;
+	}
+	@keyframes #{$animation-name} {
+		@content;
+	}
+}
+
+@mixin animation($str) {
+	-webkit-animation: #{$str};
+	-moz-animation: #{$str};
+	-ms-animation: #{$str};
+	-o-animation: #{$str};
+	animation: #{$str};
+}

@@ -1,0 +1,9 @@
+@use './variables';
+
+.navbar {
+	padding: 16px 0px;
+	&-logo {
+		width: 240px;
+		object-fit: contain;
+	}
+}
